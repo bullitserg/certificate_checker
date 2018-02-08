@@ -53,7 +53,7 @@ def create_parser():
 
 def update_files(server_num):
     """Функция получения файлов данных с крипто-сервера server_num"""
-    print('Обновлены файлов данных с криптосервера %s...' % server_num)
+    print('Обновление файлов данных с криптосервера %s...' % server_num)
     server_connection = connections[server_num]
     connect = Ssh(connection=server_connection, connection_type='key')
 
