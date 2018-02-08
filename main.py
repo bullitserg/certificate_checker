@@ -45,7 +45,7 @@ def create_parser():
     parser.add_argument('-s', '--server', type=int,
                         help="Set server number")
 
-    parser.add_argument('-c', '--cert', type=str,
+    parser.add_argument('-f', '--file', type=str,
                         help="Set certificate file")
 
     return parser
@@ -64,7 +64,7 @@ def update_files(server_num):
 
         connect.get_file(mroot_file_remote, mroot_file_local)
         connect.get_file(mca_file_remote, mca_file_local)
-        connect.get_file(mroot_file_remote, mroot_file_local)
+        connect.get_file(crl_file_remote, crl_file_local)
 
     print('Файлы данных обновлены')
 
@@ -186,7 +186,7 @@ if __name__ == '__main__':
             crl_certificate_mngr_file = cert_mngr.CertmanagerFile(crl_file_local, timezone=timezone)
 
             print('Checking started %s' % NOW)
-            check_cert('C:/Users/belim/PycharmProjects/Проверка сертификатов/1/8.cer')
+            check_cert(namespace.file)
             print('--------------------------------------------\nChecking finished %s' % datetime.now())
 
         else:
