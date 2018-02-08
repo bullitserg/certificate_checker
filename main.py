@@ -179,7 +179,7 @@ if __name__ == '__main__':
 
             update_files(namespace.server)
 
-        if namespace.cert:
+        if namespace.file:
 
             mca_certificate_mngr_file = cert_mngr.CertmanagerFile(mca_file_local, timezone=timezone)
             mroot_certificate_mngr_file = cert_mngr.CertmanagerFile(mroot_file_local, timezone=timezone)
